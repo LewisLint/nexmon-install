@@ -17,6 +17,9 @@ monoff() {
   # 2. Delete the monitor interface completely
   sudo iw dev mon0 del
   
-  # 3. Bring your regular Wi-Fi back online
+  # 3. Explicitly tell the Nexmon firmware to go back to managed mode
+  sudo nexutil -m0
+  
+  # 4. Bring your regular Wi-Fi back online
   sudo ifconfig wlan0 up
 }
