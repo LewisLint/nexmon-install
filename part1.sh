@@ -1,8 +1,18 @@
 #!/bin/zsh
-sudo apt update && sudo apt full-upgrade -y
+sudo apt update && sudo apt full-upgrade -y || exit 1
 
-# Install essential compilation dependencies
-sudo apt install -y raspberrypi-kernel-headers git libgmp3-dev gawk qpdf bison flex make autoconf libtool texinfo
+sudo apt install -y \
+    raspberrypi-kernel-headers \
+    git \
+    libgmp3-dev \
+    gawk \
+    qpdf \
+    bison \
+    flex \
+    make \
+    autoconf \
+    libtool \
+    texinfo || exit 1
 
-# REBOOT IS MANDATORY HERE TO SECURE THE KERNEL VERSION MATCH
+echo "Dependencies installed. Rebooting to ensure the kernel/header versions match..."
 sudo reboot
