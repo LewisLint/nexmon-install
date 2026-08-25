@@ -20,7 +20,3 @@ sudo make install-firmware
 cd ../../../../../utilities/nexutil/
 make
 sudo make install
-
-# 5. Initialize
-sudo iw dev wlan0 set power_save off
-sudo ifconfig wlan0 up
